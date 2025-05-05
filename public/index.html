@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Login seguro con Google y Microsoft" />
+    <title>Login</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body class="bg-light">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card shadow-lg border-0 rounded-4">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="text-center mb-4 fw-bold">Login</h2>
+
+                        <form id="loginForm">
+                            <div class="mb-4">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control form-control-lg rounded-3" id="email"
+                                    name="email" required placeholder="example@email.com">
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control form-control-lg rounded-3" id="password"
+                                    name="password" required placeholder="••••••••">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100 py-3 rounded-3 mt-3 mb-4">Get
+                                into</button>
+
+                            <div class="text-center">
+                                <p class="mb-2">Don't have an account? <a href="register.html"
+                                        class="text-decoration-none">Register here</a></p>
+                                <p>Forgot your password? <a href="forgot_password.html"
+                                        class="text-decoration-none">Recover password</a></p>
+                            </div>
+                        </form>
+
+                        <hr class="my-4">
+
+                        <div class="d-grid gap-3">
+                            <button id="googleBtn"
+                                class="btn btn-outline-secondary d-flex align-items-center justify-content-center gap-2 py-3 rounded-3">
+                                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0OCA0OCI+PHBhdGggZmlsbD0iI0ZGQzEwNyIgZD0iTTQzLjYxMSwyMC4wODNIMjRWMjloMTEuMzAzYy0xLjAwNiw0LjIzNi00LjQ3OSw3LjUtOS4zMDMsNy41Yy01LjUyMywwLTEwLTQuNDc3LTEwLTEwcy00MjctOS45OTksMTAtOS45OTljMi4zNiwwLDQuNTM4LDAuNzk5LDYuMjcsMi4xNDNsMy43OTEtMy43OUMzMy45MTMsMTIuOTgzLDMwLjY2NiwxMiwyNywxMmMtOS4zNiwwLTE3LDcuNjQtMTcsMTdzNy42NCwxNywxNywxN2M5LjM1OSwwLDE3LTcuNjQsMTctMTdjMC0xLjIxMy0wLjE0MS0yLjQxNi0wLjM4OS0zLjU3MXY0LjM0Nkg0My42MTFaIi8+PHBhdGggZmlsbD0iI0ZGM0QwMCIgZD0iTTYuMzA2LDE0LjY5MWw2LjU3MSw0LjgxOUMxNC42NTUsMTUuMTA4LDIwLjUxMywxMiwyNywxMmMzLjY2NSwwLDYuOTE0LDAuOTgyLDkuNDkyLDIuODUzbDYuNDktNi40OUMzOC41MTEsMy43LDMzLjExMSwxLDI3LDFBMjIuOTc5LDIyLjk3OSwwLDAsMCw2LjMwNiwxNC42OTFaIi8+PHBhdGggZmlsbD0iIzRDQUY1MCIgZD0iTTI3LDQ2YTIyLjg1MywyMi44NTMsMCwwLDAsMTQuMDEzLTQuNTgzbDYuMy02LjMwMWMtMi42NjMsMiAwMC02LjY4NywyLjg0LTExLjc0NiwzLjMzQTIzLjA2NCwyMy4wNjQsMCwwLDEsMjcsNDZaIi8+PHBhdGggZmlsbD0iIzE5NzZEMiIgZD0iTTYuNDA5LDMzLjMwMmwyNS45MjcsMTkuMzMxQTIyLjk4LDIyLjk4LDAsMCwwLDQzLjYxMiwyMC4wODNoLTcuMTI0QTEwLjAzOCwxMC4wMzgsMCwwLDEsMjYsMzAuMDAxLDEwLjAyNCwxMC4wMjQsMCwwLDEsMTYuODc3LDIzLjUxWiIvPjwvc3ZnPg=="
+                                    alt="Google Logo" width="24" height="24">
+                                Get started with Google
+                            </button>
+
+                            <button id="msBtn"
+                                class="btn btn-dark d-flex align-items-center justify-content-center gap-2 py-3 rounded-3">
+                                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0OCA0OCI+PHBhdGggZmlsbD0iI2ZmNDUwMCIgZD0iTTIyIDIySDZWNmgxNnoiLz48cGF0aCBmaWxsPSIjMDBhMmVkIiBkPSJNNDIgMjJIMjZWNmgxNnoiLz48cGF0aCBmaWxsPSIjN2ZiYTAwIiBkPSJNMjIgNDJINlYyNmgxNnoiLz48cGF0aCBmaWxsPSIjZmZiOTAwIiBkPSJNNDIgNDJIMjZWMjZoMTZ6Ii8+PC9zdmc+"
+                                    alt="Microsoft Logo" width="24" height="24">
+                                Get started with Microsoft
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        $('#googleBtn').on('click', function () {
+            window.location = '../api/google_login.php';
+        });
+
+        $('#msBtn').on('click', function () {
+            window.location = '../api/microsoft_login.php';
+        });
+    </script>
+
+    <script src="login.js"></script>
+</body>
+
+</html>

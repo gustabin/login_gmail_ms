@@ -1,0 +1,83 @@
+/* Este archivo CSS ha sido simplificado significativamente ya que 
+   la mayoría de los estilos ahora provienen de Bootstrap */
+
+   body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: #f3f3f3;
+    margin: 0;
+    padding: 0;
+}
+
+/* Personalización de colores primarios para coincidir con el diseño original */
+.btn-primary {
+    background-color: #3498db;
+    border-color: #3498db;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+.btn:focus {
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.25);
+}
+
+/* Estilos para los botones de inicio de sesión social */
+.btn-outline-secondary:hover {
+    background-color: #f8f9fa;
+}
+
+/* Estilos para los enlaces */
+a {
+    color: #3498db;
+    font-weight: 500;
+}
+
+a:hover {
+    color: #2980b9;
+}
+
+/* Asegurar que el card del login tenga suficiente espacio */
+.card {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .card {
+        min-width: 450px;
+    }
+}
+
+/* Estilos específicos para el dashboard */
+.dashboard {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 30px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.dashboard h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.logout-btn {
+    background: #e74c3c;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.logout-btn:hover {
+    background: #c0392b;
+}

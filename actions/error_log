@@ -1,0 +1,6 @@
+[05-May-2025 13:30:18 America/Mexico_City] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home1/stackcod/public_html/login_gmail_ms/config/db.php:90
+Stack trace:
+#0 /home1/stackcod/public_html/login_gmail_ms/config/db.php(90): mysqli->__construct('localhost', 'root', Object(SensitiveParameterValue), 'login_system')
+#1 /home1/stackcod/public_html/login_gmail_ms/actions/register.php(3): require('/home1/stackcod...')
+#2 {main}
+  thrown in /home1/stackcod/public_html/login_gmail_ms/config/db.php on line 90
